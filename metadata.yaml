@@ -1,0 +1,22 @@
+# Copyright 2022 Canonical Ltd.
+# See LICENSE file for licensing details.
+
+name: kafka-ui
+description: |
+  UI Charm for Apache Kafk
+summary: |
+  UI Charm for Apache Kafka
+series:
+  - jammy
+
+peers:
+  cluster:
+    interface: cluster
+
+requires:
+  kafka-client:
+    interface: kafka_client
+  certificates:
+    interface: tls-certificates
+    limit: 1
+    optional: true
